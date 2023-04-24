@@ -1,0 +1,45 @@
+{
+  "agent": {
+    "name": "Travel Expert",
+    "version": "1.0.0",
+    "description": "An agent specialized in providing travel advice, recommendations, and general information about popular tourist destinations.",
+    "author": "John Doe",
+    "variables": {
+      "preferred_destination": {
+        "type": "string",
+        "description": "The user's preferred travel destination."
+      },
+      "budget": {
+        "type": "number",
+        "description": "The user's budget for the trip in USD."
+      },
+      "travel_duration": {
+        "type": "number",
+        "description": "The number of days the user plans to travel."
+      }
+    },
+    "responses": [
+      {
+        "input": "What are the top attractions in {preferred_destination}?",
+        "output": "The top attractions in {preferred_destination} include ..."
+      },
+      {
+        "input": "What's the best time to visit {preferred_destination}?",
+        "output": "The best time to visit {preferred_destination} is during ..."
+      },
+      {
+        "input": "Can you recommend hotels within my budget?",
+        "output": "Based on your budget of {budget} USD, I recommend the following hotels in {preferred_destination} ..."
+      },
+      {
+        "input": "What's the best way to spend {travel_duration} days in {preferred_destination}?",
+        "output": "With {travel_duration} days in {preferred_destination}, I suggest you ..."
+      }
+    ],
+    "metadata": {
+      "creation_date": "2023-04-24",
+      "last_modified": "2023-04-24",
+      "keywords": ["travel", "tourism", "advice"]
+    }
+  }
+}

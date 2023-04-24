@@ -1,0 +1,54 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "agent": {
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "version": { "type": "string", "pattern": "^(\\d+\\.)?(\\d+\\.)?(\\*|\\d+)$" },
+        "description": { "type": "string" },
+        "author": { "type": "string" },
+        "variables": {
+          "type": "object",
+          "patternProperties": {
+            "^[a-zA-Z_][a-zA-Z0-9_]*$": {
+              "type": "object",
+              "properties": {
+                "type": { "type": "string" },
+                "description": { "type": "string" }
+              },
+              "required": ["type", "description"]
+            }
+          },
+          "additionalProperties": false
+        },
+        "responses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "input": { "type": "string" },
+              "output": { "type": "string" }
+            },
+            "required": ["input", "output"]
+          }
+        },
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "creation_date": { "type": "string", "format": "date" },
+            "last_modified": { "type": "string", "format": "date" },
+            "keywords": {
+              "type": "array",
+              "items": { "type": "string" }
+            }
+          },
+          "required": ["creation_date", "last_modified", "keywords"]
+        }
+      },
+      "required": ["name", "version", "description", "author", "variables", "responses", "metadata"]
+    }
+  },
+  "required": ["agent"]
+}
